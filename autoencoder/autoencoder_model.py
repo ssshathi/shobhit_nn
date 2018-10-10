@@ -1,8 +1,4 @@
 from torch import nn as nn
-from torch.autograd import Variable
-from torch.utils.data import DataLoader
-from torchvision import transforms
-from torchvision.datasets import MNIST
 
 
 class Autoencoder(nn.Module):
@@ -22,4 +18,5 @@ class Autoencoder(nn.Module):
     def forward(self, x):
         encoded_y = self.encoder(x)
         y = self.decoder(encoded_y)
+        return y
 
